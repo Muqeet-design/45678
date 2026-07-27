@@ -1,424 +1,273 @@
-// ==========================================
-// WHEN FLOWERS REMEMBER
-// script.js
-// ==========================================
+/* ==========================================
+   WHEN FLOWERS REMEMBER
+   SCRIPT.JS
+========================================== */
+
+/* ===============================
+   ELEMENTS
+================================ */
+
+const pages = document.querySelectorAll(".page");
+
+const loader = document.getElementById("loader");
+
+const clickSound = document.getElementById("clickSound");
 
 const introMusic = document.getElementById("introMusic");
-const clickSound = document.getElementById("clickSound");
-const beginButton = document.getElementById("beginJourney");
 
-// ----------------------------
-// Start Music
-// ----------------------------
+const galleryMusic = document.getElementById("galleryMusic");
+
+const endingMusic = document.getElementById("endingMusic");
+
+const paperSound = document.getElementById("paperSound");
+
+/* ===============================
+   BUTTONS
+================================ */
+
+const beginJourney = document.getElementById("beginJourney");
+
+const continueJourney = document.getElementById("continueJourney");
+
+const touchFlower = document.getElementById("touchFlower");
+
+const openStory = document.getElementById("openStory");
+
+const openGallery = document.getElementById("openGallery");
+
+const openSky = document.getElementById("openSky");
+
+const openGarden = document.getElementById("openGarden");
+
+const showEnding = document.getElementById("showEnding");
+
+const restartJourney = document.getElementById("restartJourney");
+
+/* ===============================
+   PAGE SYSTEM
+================================ */
+
+function showPage(id){
+
+pages.forEach(page=>{
+
+page.classList.remove("active");
+
+});
+
+document.getElementById(id).classList.add("active");
+
+}
+
+/* ===============================
+   PLAY CLICK
+================================ */
+
+function playClick(){
+
+clickSound.currentTime=0;
+
+clickSound.play().catch(()=>{});
+
+}
+
+/* ===============================
+   LOADER
+================================ */
 
 window.addEventListener("load",()=>{
 
 setTimeout(()=>{
 
-introMusic.volume = 0.35;
-
-introMusic.play().catch(()=>{});
-
-},600);
-
-});
-
-// ----------------------------
-// Begin Journey
-// ----------------------------
-
-beginButton.addEventListener("click",()=>{
-
-clickSound.currentTime = 0;
-
-clickSound.play().catch(()=>{});
-
-// Fade Out
-
-document.getElementById("opening").style.opacity="0";
-
-document.getElementById("opening").style.transition="1.5s";
+loader.style.opacity="0";
 
 setTimeout(()=>{
 
-// Next page later
+loader.style.display="none";
 
-alert("Next Scene Coming... 🌸");
-
-},1500);
-
-});
-// ==========================================
-// FLOATING PETALS
-// ==========================================
-
-const petals = document.getElementById("petals");
-
-function createPetal(){
-
-const petal = document.createElement("div");
-
-petal.className = "petal";
-
-petal.style.left = Math.random()*100+"vw";
-
-petal.style.animationDuration =
-(6 + Math.random()*5)+"s";
-
-petal.style.opacity =
-0.4 + Math.random()*0.6;
-
-petal.style.transform =
-`rotate(${Math.random()*360}deg)`;
-
-petals.appendChild(petal);
-
-setTimeout(()=>{
-
-petal.remove();
-
-},11000);
-
-}
-
-setInterval(createPetal,450);
-
-// ==========================================
-// GLOWING PARTICLES
-// ==========================================
-
-const particles = document.getElementById("particles");
-
-function createParticle(){
-
-const dot=document.createElement("div");
-
-dot.className="particle";
-
-dot.style.left=Math.random()*100+"vw";
-
-dot.style.top=Math.random()*100+"vh";
-
-dot.style.animationDuration=
-(2+Math.random()*4)+"s";
-
-particles.appendChild(dot);
-
-setTimeout(()=>{
-
-dot.remove();
-
-},6000);
-
-}
-
-setInterval(createParticle,250);
-
-
-// =====================================
-// FLOWER TUNNEL
-// =====================================
-
-const tunnel = document.getElementById("tunnel");
-const flowerTunnel = document.getElementById("flowerTunnel");
-
-function startTunnel(){
-
-document.getElementById("opening").style.display="none";
-
-tunnel.style.display="flex";
-
-setInterval(()=>{
-
-const flower=document.createElement("div");
-
-flower.className="tunnelFlower";
-
-flower.innerHTML="🌸";
-
-flower.style.left=Math.random()*100+"vw";
-
-flower.style.animationDuration=
-(4+Math.random()*3)+"s";
-
-flowerTunnel.appendChild(flower);
-
-setTimeout(()=>{
-
-flower.remove();
-
-},7000);
-
-},180);
-
-}
-
-beginButton.onclick=()=>{
-
-clickSound.play();
-
-startTunnel();
-
-};
-
-/* ===================================
-   FIRST BLOOM
-=================================== */
-
-const firstBloom = document.getElementById("firstBloom");
-const magicFlower = document.getElementById("magicFlower");
-const touchFlower = document.getElementById("touchFlower");
-
-// Tunnel → First Bloom
-
-document.getElementById("enterGarden").addEventListener("click",()=>{
-
-clickSound.currentTime = 0;
-clickSound.play().catch(()=>{});
-
-document.getElementById("tunnel").style.display="none";
-
-firstBloom.style.display="flex";
-
-});
-
-// Flower Click
-
-touchFlower.addEventListener("click",()=>{
-
-clickSound.currentTime = 0;
-clickSound.play().catch(()=>{});
-
-magicFlower.style.transform="scale(1.4)";
-magicFlower.style.filter=
-"drop-shadow(0 0 80px #ff8cc8)";
-
-setTimeout(()=>{
-
-magicFlower.style.transform="scale(1)";
-magicFlower.style.filter=
-"drop-shadow(0 0 25px #ff8cc8)";
-
-// NEXT SCENE
-// Letter Scene yahan open hogi
-
-alert("Letter Scene Coming ❤️");
-
-},1500);
-
-});
-/* ===================================
-LETTER SCENE
-=================================== */
-
-const letterScene =
-document.getElementById("letterScene");
-
-const continueStory =
-document.getElementById("continueStory");
-
-// Flower → Letter
-
-touchFlower.addEventListener("click",()=>{
-
-clickSound.currentTime=0;
-
-clickSound.play().catch(()=>{});
-
-magicFlower.style.transform="scale(1.4)";
-
-magicFlower.style.filter=
-
-"drop-shadow(0 0 80px #ff8cc8)";
-
-setTimeout(()=>{
-
-firstBloom.style.display="none";
-
-letterScene.style.display="flex";
+},1000);
 
 },1800);
 
 });
 
-// Letter → Story
+/* ==========================================
+   SCENE FLOW (PART 2)
+========================================== */
 
-continueStory.addEventListener("click",()=>{
+/* ---------- Opening → Tunnel ---------- */
 
-clickSound.currentTime=0;
+beginJourney.addEventListener("click",()=>{
 
-clickSound.play().catch(()=>{});
+playClick();
 
-// Story Page yahan open hogi
+introMusic.play().catch(()=>{});
 
-alert("Story Book Coming... 📖");
+showPage("tunnel");
 
-});
-
-/* ===================================
-STORY BOOK
-=================================== */
-
-const storyScene =
-document.getElementById("storyScene");
-
-const storyText =
-document.getElementById("storyText");
-
-const nextMemory =
-document.getElementById("nextMemory");
-
-const story = `
-
-Every flower has its own season.
-
-Some bloom for a moment...
-
-Some wait for years.
-
-But every flower remembers
-the hands that once cared for it.
-
-This journey isn't about changing yesterday.
-
-It's about remembering the beauty
-that once existed.
-
-🌺
-
-`;
-
-continueStory.addEventListener("click",()=>{
-
-letterScene.style.display="none";
-
-storyScene.style.display="flex";
-
-typeStory(story);
+createTunnelFlowers();
 
 });
 
-function typeStory(text){
+/* ---------- Tunnel → First Bloom ---------- */
 
-storyText.innerHTML="";
+continueJourney.addEventListener("click",()=>{
 
-let i=0;
+playClick();
 
-const typing=setInterval(()=>{
-
-storyText.innerHTML+=text.charAt(i);
-
-i++;
-
-if(i>=text.length){
-
-clearInterval(typing);
-
-}
-
-},35);
-
-}
-
-nextMemory.addEventListener("click",()=>{
-
-// Next Scene
-alert("Memory Gallery Coming 📷");
+showPage("firstBloom");
 
 });
-/* ===================================
-MEMORY GALLERY
-=================================== */
 
-const galleryScene=document.getElementById("galleryScene");
+/* ---------- First Bloom → Letter ---------- */
 
-const photos=document.querySelectorAll(".memoryPhoto");
+touchFlower.addEventListener("click",()=>{
 
-const memories=[
+playClick();
 
-"The day everything felt easy. 🌺",
+paperSound.currentTime=0;
 
-"A smile worth remembering.",
+paperSound.play().catch(()=>{});
 
-"Time stopped for a moment.",
+const flower=document.getElementById("magicFlower");
 
-"Some memories never fade.",
+flower.style.transform="scale(1.3)";
 
-"When flowers remember... ❤️"
-
-];
-
-nextMemory.onclick=()=>{
-
-storyScene.style.display="none";
-
-galleryScene.style.display="flex";
-
-};
-
-photos.forEach((photo,index)=>{
-
-photo.onclick=()=>{
-
-clickSound.currentTime=0;
-
-clickSound.play().catch(()=>{});
-
-photo.style.transform="scale(1.15) rotate(0deg)";
+flower.style.filter="drop-shadow(0 0 60px #ff9ecf)";
 
 setTimeout(()=>{
 
-photo.style.transform="";
+showPage("letterScene");
 
-},500);
+},1000);
 
-alert(memories[index]);
+});
 
-};
+/* ---------- Letter → Story ---------- */
+
+openStory.addEventListener("click",()=>{
+
+playClick();
+
+showPage("storyScene");
+
+});
+
+/* ==========================================
+   FLOWER TUNNEL
+========================================== */
+
+const flowerTunnel=document.getElementById("flowerTunnel");
+
+function createTunnelFlowers(){
+
+flowerTunnel.innerHTML="";
+
+for(let i=0;i<40;i++){
+
+const flower=document.createElement("div");
+
+flower.className="tunnelFlower";
+
+flower.innerHTML="🌺";
+
+flower.style.left=Math.random()*100+"vw";
+
+flower.style.animationDuration=(5+Math.random()*5)+"s";
+
+flower.style.animationDelay=(Math.random()*3)+"s";
+
+flower.style.fontSize=(30+Math.random()*25)+"px";
+
+flowerTunnel.appendChild(flower);
+
+}
+
+}
+
+
+/* ==========================================
+   SCENE FLOW (PART 3)
+========================================== */
+
+/* ---------- Story → Gallery ---------- */
+
+openGallery.addEventListener("click",()=>{
+
+playClick();
+
+introMusic.pause();
+
+galleryMusic.currentTime=0;
+
+galleryMusic.play().catch(()=>{});
+
+showPage("galleryScene");
+
+});
+
+/* ---------- Gallery → Night Sky ---------- */
+
+openSky.addEventListener("click",()=>{
+
+playClick();
+
+showPage("skyScene");
+
+createStars();
+
+createFireflies();
+
+});
+
+/* ---------- Night Sky → Garden ---------- */
+
+openGarden.addEventListener("click",()=>{
+
+playClick();
+
+galleryMusic.pause();
+
+endingMusic.currentTime=0;
+
+endingMusic.play().catch(()=>{});
+
+showPage("gardenScene");
+
+createGarden();
 
 });
 
 
+/* ==========================================
+   STARS
+========================================== */
 
-/* ===================================
-NIGHT SKY
-=================================== */
-
-const skyScene=document.getElementById("skyScene");
-
-const starsContainer=document.getElementById("starsContainer");
+const stars=document.getElementById("stars");
 
 const starMessage=document.getElementById("starMessage");
 
-const starTexts=[
+const messages=[
 
-"Some flowers still remember your smile. 🌺",
+"Some memories bloom forever. 🌺",
 
-"The moon kept every silent conversation.",
+"The sky never forgot your smile. ✨",
 
-"Kindness never truly disappears.",
+"Every star remembers a beautiful moment. ⭐",
 
-"Some memories become stars.",
+"Some flowers wait forever. 🌸",
 
-"You were always part of this garden."
+"Even silence can carry love. 🤍",
+
+"Hope still blooms somewhere. 🌺"
 
 ];
 
-continueSky.onclick=()=>{
-
-galleryScene.style.display="none";
-
-skyScene.style.display="flex";
-
-createStars();
-
-};
-
 function createStars(){
 
-starsContainer.innerHTML="";
+stars.innerHTML="";
 
-for(let i=0;i<60;i++){
+for(let i=0;i<70;i++){
 
 const star=document.createElement("div");
 
@@ -428,75 +277,189 @@ star.style.left=Math.random()*100+"vw";
 
 star.style.top=Math.random()*100+"vh";
 
+star.style.animationDelay=(Math.random()*4)+"s";
+
 star.onclick=()=>{
 
-clickSound.currentTime=0;
-
-clickSound.play().catch(()=>{});
-
-star.style.transform="scale(3)";
+playClick();
 
 starMessage.innerHTML=
 
-starTexts[Math.floor(Math.random()*starTexts.length)];
+messages[Math.floor(Math.random()*messages.length)];
 
 };
 
-starsContainer.appendChild(star);
+stars.appendChild(star);
 
 }
 
 }
 
 
-/* ===================================
-FINAL GARDEN
-=================================== */
+/* ==========================================
+   FIREFLIES
+========================================== */
 
-const finalScene=document.getElementById("finalScene");
+const fireflies=document.getElementById("fireflies");
 
-const flowerGarden=document.getElementById("flowerGarden");
+function createFireflies(){
 
-continueGarden.onclick=()=>{
+fireflies.innerHTML="";
 
-skyScene.style.display="none";
+for(let i=0;i<18;i++){
 
-finalScene.style.display="flex";
+const fly=document.createElement("div");
 
-let count=0;
+fly.className="firefly";
 
-const bloom=setInterval(()=>{
+fly.style.left=Math.random()*100+"vw";
+
+fly.style.top=Math.random()*100+"vh";
+
+fly.style.animationDelay=(Math.random()*8)+"s";
+
+fireflies.appendChild(fly);
+
+}
+
+}
+
+
+/* ==========================================
+   FINAL GARDEN
+========================================== */
+
+const flowerField = document.getElementById("flowerField");
+
+function createGarden(){
+
+flowerField.innerHTML="";
+
+for(let i=0;i<45;i++){
 
 const flower=document.createElement("div");
 
-flower.className="finalFlower";
+flower.className="flower";
 
 flower.innerHTML="🌺";
 
-flowerGarden.appendChild(flower);
+flower.style.left=Math.random()*100+"vw";
 
-count++;
+flower.style.animationDelay=(i*0.08)+"s";
 
-if(count==40){
+flower.style.fontSize=(35+Math.random()*35)+"px";
 
-clearInterval(bloom);
+flowerField.appendChild(flower);
 
 }
 
-},180);
+}
 
-};
 
-finishJourney.onclick=()=>{
+/* ==========================================
+   GARDEN → ENDING
+========================================== */
 
-document.body.style.transition="3s";
+showEnding.addEventListener("click",()=>{
 
-document.body.style.opacity="0";
+playClick();
+
+showPage("endingScene");
+
+createPetals();
+
+});
+
+
+/* ==========================================
+   RESTART
+========================================== */
+
+restartJourney.addEventListener("click",()=>{
+
+playClick();
+
+endingMusic.pause();
+
+galleryMusic.pause();
+
+introMusic.pause();
+
+introMusic.currentTime=0;
+
+galleryMusic.currentTime=0;
+
+endingMusic.currentTime=0;
+
+showPage("opening");
+
+});
+
+
+/* ==========================================
+   FLOATING PETALS
+========================================== */
+
+function createPetals(){
+
+const petals=document.getElementById("petals");
+
+petals.innerHTML="";
+
+for(let i=0;i<40;i++){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(6+Math.random()*5)+"s";
+
+petal.style.animationDelay=(Math.random()*2)+"s";
+
+petals.appendChild(petal);
+
+}
+
+}
+
+
+/* ==========================================
+   SPARKLES
+========================================== */
+
+setInterval(()=>{
+
+const sparkles=document.getElementById("sparkles");
+
+const sparkle=document.createElement("div");
+
+sparkle.className="sparkle";
+
+sparkle.style.left=Math.random()*100+"vw";
+
+sparkle.style.top=Math.random()*100+"vh";
+
+sparkles.appendChild(sparkle);
 
 setTimeout(()=>{
 
-alert("Thank you for taking this journey. 🌺");
+sparkle.remove();
 
-},3000);
+},2000);
 
-};
+},250);
+
+
+/* ==========================================
+   AUTO PLAY (FIRST USER CLICK)
+========================================== */
+
+document.addEventListener("click",()=>{
+
+introMusic.play().catch(()=>{});
+
+},{once:true});
