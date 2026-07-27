@@ -39,7 +39,6 @@ position:fixed;
 
 inset:0;
 
-display:none;
 
 justify-content:center;
 
@@ -53,7 +52,6 @@ padding:40px;
 
 .page.active{
 
-display:flex;
 
 animation:fadeIn 1s ease;
 
@@ -209,8 +207,6 @@ z-index:3;
 
 #opening{
 
-display:flex;
-
 background:
 linear-gradient(
 135deg,
@@ -288,8 +284,6 @@ linear-gradient(
 #040404 0%,
 #120914 50%,
 #24122c 100%);
-
-display:none;
 
 }
 
@@ -449,8 +443,6 @@ width:90%;
 
 max-width:760px;
 
-display:flex;
-
 justify-content:center;
 
 align-items:center;
@@ -546,8 +538,6 @@ margin:45px auto 0;
 
 #storyScene{
 
-display:none;
-
 background:
 
 linear-gradient(
@@ -566,8 +556,6 @@ z-index:5;
 width:90%;
 
 max-width:850px;
-
-display:flex;
 
 justify-content:center;
 
@@ -649,8 +637,6 @@ margin:45px auto 0;
 ========================================== */
 
 #galleryScene{
-
-display:none;
 
 background:
 linear-gradient(
@@ -858,8 +844,6 @@ opacity:1;
 ========================================== */
 
 #skyScene{
-
-display:none;
 
 background:
 linear-gradient(
@@ -1148,7 +1132,6 @@ pointer-events:none;
 
 #gardenScene{
 
-display:none;
 
 background:
 linear-gradient(
@@ -1276,8 +1259,6 @@ margin-top:45px;
 ========================================== */
 
 #endingScene{
-
-display:none;
 
 background:
 
