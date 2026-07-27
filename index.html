@@ -4,118 +4,212 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>When Flowers Remember</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>When Flowers Remember 🌺</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
-<!-- ============================= -->
-<!-- BACKGROUND PARTICLES -->
-<!-- ============================= -->
+<!-- ================================= -->
+
+<!-- BACKGROUND EFFECTS -->
+
+<!-- ================================= -->
 
 <div id="particles"></div>
 
 <div id="petals"></div>
 
-<!-- ============================= -->
-<!-- OPENING PAGE -->
-<!-- ============================= -->
+<div id="sparkles"></div>
 
-<section id="opening" class="page active">
+<!-- ================================= -->
+
+<!-- AUDIO -->
+
+<!-- ================================= -->
+
+<audio id="introMusic"
+src="assets/audio/intro.mp3"
+loop></audio>
+
+<audio id="galleryMusic"
+src="assets/audio/gallery.mp3"
+loop></audio>
+
+<audio id="endingMusic"
+src="assets/audio/ending.mp3"
+loop></audio>
+
+<audio id="clickSound"
+src="assets/audio/click.mp3"></audio>
+
+<audio id="paperSound"
+src="assets/audio/paper.mp3"></audio>
+
+<!-- ================================= -->
+
+<!-- OPENING -->
+
+<!-- ================================= -->
+
+<section
+id="opening"
+class="page active">
 
 <div class="overlay"></div>
 
 <div class="opening-content">
 
-<p class="opening-line">
-Every flower remembers the season in which it bloomed...
-</p>
-
-<h1>
-When Flowers Remember
-</h1>
-
-<p class="subtitle">
-A quiet journey through memories,
-kindness, and moments that never truly faded.
-</p>
-
-<button id="beginJourney">
-
-Begin the Journey 🌸
-
-</button>
-
-</div>
-
-</section>
-<!-- ================================= -->
-<!-- FLOWER TUNNEL -->
-<!-- ================================= -->
-
-<section id="tunnel" class="page">
-
-<div id="flowerTunnel"></div>
-
-<div class="tunnelContent">
-
-<h2>Walk Slowly...</h2>
-
-<p>
-
-Every step leads to a memory.
-
-</p>
-
-<button id="enterGarden">
-
-Continue
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================================= -->
-<!-- FIRST BLOOM -->
-<!-- ================================= -->
-
-<section id="firstBloom" class="page">
-
-<div class="bloomBackground"></div>
-
-<div class="bloomContainer">
-
-<div id="magicFlower">
+<div class="logo">
 
 🌺
 
 </div>
 
-<h2 id="bloomTitle">
+<p class="opening-line">
 
-Before every memory...
-
-</h2>
-
-<p id="bloomText">
-
-There was a flower that quietly remembered everything.
+Every flower remembers
+the season
+in which it bloomed...
 
 </p>
 
-<button id="touchFlower">
+<h1>
+
+When Flowers Remember
+
+</h1>
+
+<h3>
+
+For Musfirah
+
+</h3>
+
+<p class="subtitle">
+
+A quiet journey made from
+flowers,
+memories,
+and emotions that never truly disappeared.
+
+</p>
+
+<button
+id="beginJourney">
+
+Begin The Journey 🌺
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+
+<!-- FLOWER TUNNEL -->
+
+<!-- ================================= -->
+
+<section
+id="tunnel"
+class="page">
+
+<div class="tunnel-overlay"></div>
+
+<div id="flowerTunnel"></div>
+
+<div class="tunnel-content">
+
+<p class="smallTitle">
+
+The path ahead is quiet...
+
+</p>
+
+<h2>
+
+Walk Through
+The Garden
+
+</h2>
+
+<p>
+
+Every step brings you
+closer to a forgotten memory.
+
+</p>
+
+<button
+id="continueJourney">
+
+Walk Forward 🌺
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+
+<!-- FIRST BLOOM -->
+
+<!-- ================================= -->
+
+<section
+id="firstBloom"
+class="page">
+
+<div class="bloomBackground"></div>
+
+<div class="bloomGlow"></div>
+
+<div class="bloomContainer">
+
+<div
+id="magicFlower">
+
+🌺
+
+</div>
+
+<h2>
+
+The Last Bloom
+
+</h2>
+
+<p>
+
+Before every memory...
+
+there was always
+a flower waiting quietly.
+
+</p>
+
+<button
+id="touchFlower">
 
 Touch The Flower
 
@@ -123,79 +217,121 @@ Touch The Flower
 
 </div>
 
+
+  
 </section>
 
 
 
-<!-- ================================= -->
+  <!-- ================================= -->
+
 <!-- LETTER SCENE -->
+
 <!-- ================================= -->
 
-<section id="letterScene" class="page">
+<section
+id="letterScene"
+class="page">
 
-<div class="letterBackground"></div>
+<div class="letterOverlay"></div>
+
+<div class="letterContainer">
 
 <div class="letterPaper">
 
-<h2>Dear Musfirah 🌺</h2>
+<h2>
 
-<div id="letterContent">
+Dear Musfirah 🌺
+
+</h2>
+
+<div class="letterText">
 
 <p>
 
-I don't know where this journey will end...
+If you are reading this...
 
-But every flower in this garden still remembers
-the season in which it bloomed.
+Thank you for coming this far.
 
-Some memories fade.
+This journey was never made
+to force an apology.
 
-Some stay forever.
+It was made because
+some flowers never forget
+the people who helped them bloom.
 
-This little place isn't asking you to change the past.
-
-It's simply a quiet garden...
-
-where kindness still exists.
-
-🌺
+And neither do memories.
 
 </p>
 
 </div>
 
-<button id="continueStory">
+<button
+id="openStory">
 
-Continue →
+Continue
 
 </button>
 
 </div>
 
+</div>
+
 </section>
-<!-- ================================= -->
-<!-- STORY BOOK -->
+
 <!-- ================================= -->
 
-<section id="storyScene" class="page">
+<!-- STORY BOOK -->
+
+<!-- ================================= -->
+
+<section
+id="storyScene"
+class="page">
+
+<div class="bookContainer">
 
 <div class="book">
 
-<div class="pageNumber">
-Chapter I
+<div class="chapter">
+
+CHAPTER I
+
 </div>
 
 <h2>
 
-The Story Begins
+When Flowers Remember
 
 </h2>
 
-<div id="storyText">
+<div
+id="storyContent">
+
+<p>
+
+Every flower has its own story.
+
+Some bloom in spring.
+
+Some bloom after storms.
+
+Some never stop waiting.
+
+Maybe memories are just like flowers...
+
+Quiet...
+
+Beautiful...
+
+And impossible to completely forget.
+
+</p>
 
 </div>
 
-<button id="nextMemory">
+<button
+id="openGallery">
 
 Continue To Memories 🌺
 
@@ -203,13 +339,24 @@ Continue To Memories 🌺
 
 </div>
 
+</div>
+
 </section>
 
-<!-- ================================= -->
-<!-- MEMORY GALLERY -->
+
+  
+
 <!-- ================================= -->
 
-<section id="galleryScene" class="page">
+<!-- MEMORY GALLERY -->
+
+<!-- ================================= -->
+
+<section
+id="galleryScene"
+class="page">
+
+<div class="galleryOverlay"></div>
 
 <div class="galleryContainer">
 
@@ -219,72 +366,78 @@ Memory Gallery
 
 </h2>
 
-<p class="gallerySub">
+<p class="gallerySubtitle">
 
-Some moments stay forever...
+Every picture carries a silent story.
 
 </p>
 
-<div class="photoWall">
+<div class="memoryGrid">
 
-<div class="memoryPhoto" data-index="0">
+<div class="memoryCard">
+<img src="assets/images/photo1.jpg" alt="">
+<span>Memory 01</span>
+</div>
 
-<img src="assets/images/photo1.jpg">
+<div class="memoryCard">
+<img src="assets/images/photo2.jpg" alt="">
+<span>Memory 02</span>
+</div>
+
+<div class="memoryCard">
+<img src="assets/images/photo3.jpg" alt="">
+<span>Memory 03</span>
+</div>
+
+<div class="memoryCard">
+<img src="assets/images/photo4.jpg" alt="">
+<span>Memory 04</span>
+</div>
+
+<div class="memoryCard">
+<img src="assets/images/photo5.jpg" alt="">
+<span>Memory 05</span>
+</div>
+
+<div class="memoryCard">
+<img src="assets/images/photo6.jpg" alt="">
+<span>Memory 06</span>
+</div>
 
 </div>
 
-<div class="memoryPhoto" data-index="1">
+<button
+id="openSky">
 
-<img src="assets/images/photo2.jpg">
-
-</div>
-
-<div class="memoryPhoto" data-index="2">
-
-<img src="assets/images/photo3.jpg">
-
-</div>
-
-<div class="memoryPhoto" data-index="3">
-
-<img src="assets/images/photo4.jpg">
-
-</div>
-
-<div class="memoryPhoto" data-index="4">
-
-<img src="assets/images/photo5.jpg">
-
-</div>
-
-</div>
-
-<button id="continueSky">
-
-Continue 🌙
+Continue To The Night Sky 🌙
 
 </button>
 
 </div>
 
 </section>
-<!-- ================================= -->
-<!-- NIGHT SKY -->
+
 <!-- ================================= -->
 
-<section id="skyScene" class="page">
+<!-- NIGHT SKY -->
+
+<!-- ================================= -->
+
+<section
+id="skyScene"
+class="page">
 
 <div id="moon"></div>
 
-<div id="starsContainer"></div>
+<div id="stars"></div>
 
 <div id="fireflies"></div>
 
-<div class="skyContent">
+<div class="skyContainer">
 
 <h2>
 
-The Sky Never Forgot
+The Sky Still Remembers
 
 </h2>
 
@@ -292,44 +445,47 @@ The Sky Never Forgot
 
 Touch a star...
 
-Every star hides a memory.
+Every star hides a message.
 
 </p>
 
-<div id="starMessage">
+<div
+id="starMessage">
 
 ✨ The stars are waiting...
 
 </div>
 
-<button id="continueGarden">
+<button
+id="openGarden">
 
-Walk Into The Garden 🌺
+Walk To The Last Bloom 🌺
 
 </button>
 
 </div>
 
 </section>
+
 <!-- ================================= -->
+
 <!-- FINAL GARDEN -->
+
 <!-- ================================= -->
 
-<section id="finalScene" class="page">
+<section
+id="gardenScene"
+class="page">
 
-<div class="gardenGlow"></div>
+<div class="gardenOverlay"></div>
 
-<div class="finalContainer">
+<div id="flowerField"></div>
 
-<h1>
-
-🌺
-
-</h1>
+<div class="gardenContent">
 
 <h2>
 
-When Flowers Remember
+The Last Bloom
 
 </h2>
 
@@ -341,13 +497,10 @@ Some memories bloom forever.
 
 </p>
 
-<div id="flowerGarden">
+<button
+id="showEnding">
 
-</div>
-
-<button id="finishJourney">
-
-Finish Journey
+One Last Step ❤️
 
 </button>
 
@@ -355,18 +508,95 @@ Finish Journey
 
 </section>
 
+<!-- ================================= -->
 
-<!--
-============================= -->
-<!-- AUDIO -->
-<!-- ============================= -->
+<!-- ENDING -->
 
-<audio id="introMusic" src="assets/audio/intro.mp3" loop></audio>
+<!-- ================================= -->
 
-<audio id="clickSound" src="assets/audio/click.mp3"></audio>
+<section
+id="endingScene"
+class="page">
+
+<div class="endingOverlay"></div>
+
+<div class="endingContent">
+
+<div class="endingFlower">
+
+🌺
+
+</div>
+
+<h1>
+
+When Flowers Remember
+
+</h1>
+
+<p>
+
+Thank you for walking through
+this little garden of memories.
+
+Whether time changes everything
+or nothing at all...
+
+I hope life always gives you
+beautiful flowers to remember.
+
+🌺
+
+</p>
+
+<h3>
+
+— Abdul Muqeet
+
+</h3>
+
+<button
+id="restartJourney">
+
+Begin Again
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+
+<!-- LOADER -->
+
+<!-- ================================= -->
+
+<div id="loader">
+
+<div class="loaderFlower">
+
+🌺
+
+</div>
+
+<p>
+
+Loading Memories...
+
+</p>
+
+</div>
+
+<!-- ================================= -->
+
+<!-- SCRIPT -->
+
+<!-- ================================= -->
 
 <script src="script.js"></script>
 
 </body>
 
 </html>
+  
